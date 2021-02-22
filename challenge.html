@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Weather - She Codes</title>
+        <style>
+            body{
+                margin: 0 auto;
+                font-family: Helvetica, Arial, sans-serif;
+                text-align: center;
+            }
+            h1{
+                color:#1a64d6;
+                font-size: 34px;
+                line-height: 48px;
+                margin: 0;
+                text-align: center;
+            }
+            h2{
+                margin: 0;
+                font-size: 34px;
+                line-height: 48px;
+                font-weight: 400;
+            }
+            h3{
+                font-weight: bold;
+                text-decoration: none;
+                font-size: 1em;
+                display: block;
+            }
+            ul{
+                display: block;
+                padding: 0; <!-- but why?-->
+                margin: 0 auto;
+            }
+            li{
+                list-style: none;
+                margin: 0 auto;
+                padding: 10px 0;
+                margin: 0 auto;
+                display: block;
+                width: 400px;
+            }
+            li:hover{
+                background-color: #FEF9E7;
+            }
+            p{
+                font-size: 18px;
+                opacity: 0.7;
+                text-align: center;
+                font-family: monospace;
+            }
+            button{
+                color: white;
+                background-color: #1a64d6;
+                border: 1px solid #1a64d6;
+                border-radius: 30px;
+                font-size: 16px;
+                padding: 16px 24px;
+                line-height: 22px;
+                cursor: pointer;
+                margin: 20px 0;
+            }
+            button:hover{
+                color: #1a64d6;
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 id="h1">
+                🌤
+                <br>
+                Currently 21° in Tokyo
+            </h1>
+            <h2>13º / <strong>23º</strong></h2>
+            <br>
+        </header>
+        <main>
+            <section></section>
+                <ul>
+                    <li>
+                        <h3>🌧 Tomorrow</h3>
+                        <p>10º / <strong>22º</strong></p>
+                    </li>
+                    <li>
+                        <h3>🌥️ Saturday</h3>
+                        <p>15º / <strong>17º</strong></p>
+                    </li>
+                    <li>
+                        <h3>☀️ Sunday </h3>
+                        <p>25º / <strong>28º</strong></p>
+                    </li>
+                </ul>
+                <button>Change City</button>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; Coded by Ana Cury 🇧🇷</p>
+        </footer>
+        <script type="text/javascript">
+
+            function set(){
+
+                let city = prompt("What city do you live in?");
+                let tempo = parseInt(prompt("What temperature is it?"));
+                let title = document.getElementById("h1");
+
+                if(tempo > 10)
+                {
+                  title.innerHTML = "😄<br>" + "Currently " + tempo + "° in " + city;
+
+                }
+                else
+                {
+                   title.innerHTML = "☹️ <br>" + "Currently " + tempo + "° in " + city;
+
+                }
+            }
+
+            let button = document.querySelector("button");
+            button.addEventListener("click", set);
+
+
+
+        </script>
+    </body>
+</html>
